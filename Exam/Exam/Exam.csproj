@@ -1,0 +1,111 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Fonts\**" />
+    <EmbeddedResource Remove="Fonts\**" />
+    <None Remove="Fonts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\baseline_add_a_photo_black_48dp.png" />
+    <None Remove="Images\baseline_add_a_photo_white_48dp.png" />
+    <None Remove="Images\baseline_add_black_48dp.png" />
+    <None Remove="Images\baseline_add_white_48dp.png" />
+    <None Remove="Images\baseline_delete_black_48dp.png" />
+    <None Remove="Images\baseline_delete_white_48dp.png" />
+    <None Remove="Images\baseline_done_black_48dp.png" />
+    <None Remove="Images\baseline_done_white_48dp.png" />
+    <None Remove="Images\baseline_edit_black_48dp.png" />
+    <None Remove="Images\baseline_edit_white_48dp.png" />
+    <None Remove="Images\baseline_send_black_48dp.png" />
+    <None Remove="Images\baseline_send_white_48dp.png" />
+    <None Remove="Images\ExerciseExample.png" />
+    <None Remove="Images\outline_autorenew_white_48dp.png" />
+    <None Remove="Images\outline_logout_white_48dp.png" />
+    <None Remove="Images\outline_polymer_white_48dp.png" />
+    <None Remove="Images\Return.png" />
+    <None Remove="Images\videoExample.png" />
+    <None Remove="Lobster-Regular.ttf" />
+    <None Remove="OpenSans-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\baseline_add_a_photo_black_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_add_a_photo_white_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_add_black_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_add_white_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_delete_black_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_delete_white_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_done_black_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_done_white_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_edit_black_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_edit_white_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_send_black_48dp.png" />
+    <EmbeddedResource Include="Images\baseline_send_white_48dp.png" />
+    <EmbeddedResource Include="Images\outline_autorenew_white_48dp.png" />
+    <EmbeddedResource Include="Images\outline_logout_white_48dp.png" />
+    <EmbeddedResource Include="Images\outline_polymer_white_48dp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Modals\ExercisePlanModal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Modals\ExerciseModal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Modals\UserModal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\UserView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ExerciseView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Modals\ImageModal.xaml.cs">
+      <DependentUpon>ImageModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\ExercisePlanModal.xaml.cs">
+      <DependentUpon>ExercisePlanModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\ExerciseModal.xaml.cs">
+      <DependentUpon>ExerciseModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\RegisterModal.xaml.cs">
+      <DependentUpon>RegisterModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Modals\UserModal.xaml.cs">
+      <DependentUpon>UserModal.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UserView.xaml.cs">
+      <DependentUpon>UserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExerciseView.xaml.cs">
+      <DependentUpon>ExerciseView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

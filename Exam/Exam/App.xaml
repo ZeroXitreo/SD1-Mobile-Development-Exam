@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exam.App">
+    <Application.Resources>
+        <Color x:Key="Accent" >#61D596</Color>
+        <Color x:Key="Prime0" >#1E202F</Color>
+        <Color x:Key="Prime1" >#C4C5CF</Color>
+        <Color x:Key="Prime2" >#F3F4F8</Color>
+        <Color x:Key="Prime3" >#ffffff</Color>
+
+        <Color x:Key="DarkAccent" >#61D596</Color>
+        <Color x:Key="DarkPrime0" >#ffffff</Color>
+        <Color x:Key="DarkPrime1" >#f5f6fa</Color>
+        <Color x:Key="DarkPrime2" >#1f1d2a</Color>
+        <Color x:Key="DarkPrime3" >#2d2f3c</Color>
+
+        <x:Int16 x:Key="CornerRadius">10</x:Int16>
+        <x:Int16 x:Key="SpacingSmall">5</x:Int16>
+        <x:Int16 x:Key="Spacing">10</x:Int16>
+        <x:Int16 x:Key="SpacingLarge">20</x:Int16>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+            <Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
+            <Setter Property="TextColor" Value="{StaticResource Prime3}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextTransform" Value="None" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+            <Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="WidthRequest" Value="50" />
+            <Setter Property="Padding" Value="{StaticResource SpacingSmall}" />
+        </Style>
+
+        <Style x:Key="PageWrapper" TargetType="Layout">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Prime2}, Dark={StaticResource DarkPrime2}}" />
+        </Style>
+
+        <Style x:Key="SearchBar" TargetType="SearchBar">
+            <Setter Property="Margin" Value="0, 15" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Prime3}, Dark={StaticResource DarkPrime3}}" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Prime0}, Dark={StaticResource DarkPrime0}}" />
+            <Setter Property="CancelButtonColor" Value="{AppThemeBinding Light={StaticResource Prime0}, Dark={StaticResource DarkPrime0}}" />
+            <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource Prime1}, Dark={StaticResource DarkPrime1}}" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="Padding" Value="{StaticResource Spacing}" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="CornerRadius" Value="{StaticResource CornerRadius}" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Prime3}, Dark={StaticResource DarkPrime3}}" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="BaseLabel">
+        </Style>
+
+        <Style TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+        </Style>
+
+        <Style x:Key="PrimaryLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Prime0}, Dark={StaticResource DarkPrime0}}" />
+        </Style>
+
+        <Style x:Key="SecondaryLabel" TargetType="Label" BasedOn="{StaticResource BaseLabel}">
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Prime1}, Dark={StaticResource DarkPrime1}}" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="LoginEntry" TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="{StaticResource Prime3}" />
+            <Setter Property="TextColor" Value="{StaticResource Prime3}" />
+        </Style>
+    </Application.Resources>
+</Application>

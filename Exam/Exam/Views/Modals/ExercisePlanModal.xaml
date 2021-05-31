@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:locals="clr-namespace:Exam"
+             xmlns:views="clr-namespace:Exam.Views"
+             xmlns:models="clr-namespace:Exam.Models"
+             x:Class="Exam.Views.Modals.ExercisePlanModal"
+             x:Name="This"
+             BindingContext="{x:Reference This}"
+             Title="Nyt program">
+    <StackLayout Style="{DynamicResource PageWrapper}">
+        <StackLayout Padding="{StaticResource SpacingLarge}">
+            <Entry Text="{Binding ExercisePlan.Title}" Placeholder="Titel" />
+            <Entry Text="{Binding ExercisePlan.Description}" Placeholder="Beskrivelse" />
+        </StackLayout>
+        <ListView ItemsSource="{Binding Exercises}" HasUnevenRows="True" Margin="0, 15, 0, 15" SelectionMode="None" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Margin="20, 5, 20, 5">
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" Style="{DynamicResource PrimaryLabel}" />
+                                    <Label Text="{Binding Description}" Style="{DynamicResource SecondaryLabel}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Padding="{StaticResource SpacingLarge}">
+            <Button Text="Opret og send program" Clicked="Create"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

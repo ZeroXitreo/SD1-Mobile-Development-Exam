@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:locals="clr-namespace:Exam"
+             xmlns:views="clr-namespace:Exam.Views"
+             xmlns:models="clr-namespace:Exam.Models"
+             x:Class="Exam.Views.ExerciseView"
+             x:Name="This"
+             BindingContext="{x:Reference This}"
+             Title="{Binding Exercise.Title, StringFormat='Øvelse {0}'}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Tilføj billede" Clicked="UpdateExercise" IconImageSource="{locals:ImageResource Exam.Images.baseline_edit_white_48dp.png}" />
+    </ContentPage.ToolbarItems>
+
+    <AbsoluteLayout Style="{StaticResource PageWrapper}">
+        <ScrollView VerticalOptions="StartAndExpand">
+            <StackLayout>
+                <CarouselView ItemsSource="{Binding Exercise.Image}" Loop="False" PeekAreaInsets="16" HeightRequest="200" Margin="0, 16" IsVisible="{Binding Exercise.Image.Count}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="8" />
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Image">
+                            <Frame Margin="16" Padding="0" CornerRadius="20" BackgroundColor="{AppThemeBinding Light={StaticResource Prime3}, Dark={StaticResource DarkPrime3}}">
+                                <Image Aspect="AspectFill" Source="{Binding path}" />
+                            </Frame>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <Frame Margin="16" Padding="0" CornerRadius="20" BackgroundColor="{AppThemeBinding Light={StaticResource Prime3}, Dark={StaticResource DarkPrime3}}">
+                    <StackLayout>
+                        <StackLayout Margin="32">
+                            <Label FontAttributes="Bold" TextColor="{AppThemeBinding Light={StaticResource Prime0}, Dark={StaticResource DarkPrime0}}" FontSize="18" Text="{Binding Exercise.Title}" />
+                            <Label TextColor="{AppThemeBinding Light={StaticResource Prime1}, Dark={StaticResource DarkPrime1}}" LineBreakMode="WordWrap" Text="{Binding Exercise.Description}" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <StackLayout AbsoluteLayout.LayoutBounds="1, 1, -1, -1"
+                     AbsoluteLayout.LayoutFlags="PositionProportional"
+                     Margin="{StaticResource SpacingLarge}"
+                     Spacing="20">
+            <ImageButton Source="{locals:ImageResource Exam.Images.baseline_add_a_photo_white_48dp.png}" Clicked="CreateImage" />
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>
